@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import SwipeableTabs from 'react-swipeable-tabs';
 
 export default class TestTabs extends React.Component {
@@ -33,4 +33,4 @@ export default class TestTabs extends React.Component {
             />
         );
     }
-}
+}*/

@@ -11,9 +11,6 @@ import {
   Dimensions,
   View,
 } from 'react-native';
-import { WebBrowser } from 'expo';
-
-import { MonoText } from '../components/StyledText';
 
 const styles = StyleSheet.create({
   wrapper:{
@@ -48,7 +45,7 @@ text: {
     fontWeight: 'bold',
 }
 
-})
+});
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -66,13 +63,16 @@ export default class HomeScreen extends React.Component {
               source={require('../assets/images/logo.png')}
             />
           </View>
-          <View style={styles.slide2}>
-            <Text style={styles.text}>And simple</Text>
-          </View>
-          <View style={styles.slide3}>
+
+            <View style={styles.slide2}>
+                <Text style={styles.text}>And simple</Text>
+
+            </View>
+
+
+            <View style={styles.slide3}>
             <Text style={styles.text}>Home</Text>
           </View>
         </Swiper>
     );
-  }
-}
+  }}
