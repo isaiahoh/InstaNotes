@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, TouchableOpacity} from 'react-native';
 import {Camera, Permissions, FileSystem} from 'expo';
 
-var imageName = [];
+let imageName = [];
 
 export default class CameraExample extends React.Component {
     state = {
@@ -21,6 +21,7 @@ export default class CameraExample extends React.Component {
                 this.filePath,{
                 intermediates: true
                 });
+            console.log(this.filePath);
             imageName.push(photo.uri);
             console.log(imageName[0]);
             await FileSystem.copyAsync({
