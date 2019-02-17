@@ -6,6 +6,8 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+//import GalleryScreen from '../screens/GalleryScreen';
+//import CameraScreen from '../screens/CameraScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -52,9 +54,37 @@ SettingsStack.navigationOptions = {
     />
   ),
 };
+/*const CameraStack = createStackNavigator({
+  Camera: CameraScreen,
+});
 
+CameraStack.navigationOptions = {
+  tabBarLabel: 'Camera',
+  tabBarIcon: ({ focused}) => (
+      <TabBarIcon
+        focused = {focused}
+        name={Platform.OS === 'ios' ? 'ios-camera' : 'md-camera'}
+      />
+  )
+}
+
+const GalleryStack = createStackNavigator({
+  Gallery: GalleryScreen,
+});
+
+GalleryStack.navigationOptions = {
+  tabBarLabel: 'Gallery',
+  tabBarIcon: ({ focused }) => (
+      <TabBarIcon
+        focused = {focused}
+        name = {Platform.OS === 'ios' ? 'ios-menu' : 'logo-dropbox'}
+      />
+  )
+}*/
 export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
+  //CameraStack,
+  //GalleryStack
 });
