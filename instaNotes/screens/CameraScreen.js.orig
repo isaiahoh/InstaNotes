@@ -1,0 +1,93 @@
+import React from 'react';
+import {Text, View, TouchableOpacity} from 'react-native';
+import {Camera, Permissions, FileSystem} from 'expo';
+
+<<<<<<< HEAD
+var imageName = [];
+=======
+>>>>>>> f24538cd2f7bd39f775d9f6ca6a8d339f82425be
+
+export default class CameraExample extends React.Component {
+    state = {
+        hasCameraPermission: null,
+        type: Camera.Constants.Type.back,
+    };
+<<<<<<< HEAD
+    filePath;
+=======
+    imageName;
+>>>>>>> f24538cd2f7bd39f775d9f6ca6a8d339f82425be
+
+    snap = async () => {
+        if (this.camera) {
+            let photo = await this.camera.takePictureAsync();
+            console.log(photo.uri);
+            console.log(FileSystem.documentDirectory);
+<<<<<<< HEAD
+            this.filePath = FileSystem.documentDirectory + "photos/";
+            await FileSystem.makeDirectoryAsync(
+                this.filePath,{
+                intermediates: true
+                });
+            imageName.push(photo.uri);
+            console.log(imageName[0]);
+            await FileSystem.copyAsync({
+                from: photo.uri,
+                to: this.filePath,
+=======
+            await FileSystem.makeDirectoryAsync(
+                FileSystem.documentDirectory + 'images/',
+                {intermediates: false}
+                );
+
+            console.log(this.imageName);
+            await FileSystem.moveAsync({
+                from: photo.uri,
+                to: '${FileSystem.documentDirectory}photos/Photo_${this.state.photoId}.jpg',
+>>>>>>> f24538cd2f7bd39f775d9f6ca6a8d339f82425be
+            });
+        }
+    };
+
+    async componentDidMount() {
+        const { status } = await Permissions.askAsync(Permissions.CAMERA);
+        this.setState({ hasCameraPermission: status === 'granted' });
+    }
+
+    render() {
+        const { hasCameraPermission } = this.state;
+        if (hasCameraPermission === null) {
+            return <View />;
+        } else if (hasCameraPermission === false) {
+            return <Text>No access to camera</Text>;
+        } else {
+            return (
+                <View style={{ flex: 1 }}>
+                    <Camera style={{ flex: 1 }} type={this.state.type}  ref={ref => { this.camera = ref; }}>
+                        <View
+                            style={{
+                                flex: 1,
+                                backgroundColor: 'transparent',
+                                flexDirection: 'row',
+                            }}>
+                            <TouchableOpacity
+                                style={{
+                                    flex: 0.1,
+                                    alignSelf: 'flex-end',
+                                    alignItems: 'center',
+                                }}
+                                onPress={() => {
+                                    this.snap();
+                                }}>
+                                <Text
+                                    style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
+                                    Snap
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    </Camera>
+                </View>
+            );
+        }
+    }
+}

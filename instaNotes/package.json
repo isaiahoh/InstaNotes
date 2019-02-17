@@ -14,8 +14,12 @@
     "@expo/samples": "2.1.1",
     "expo": "^32.0.0",
     "react": "16.5.0",
+    "react-dom": "^16.8.2",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-navigation": "^3.0.9"
+    "react-native-swiper": "^1.5.14",
+    "react-navigation": "^3.0.9",
+    "react-swipeable-tabs": "^2.2.0",
+    "webpack": "^4.29.4"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",

@@ -82,9 +82,15 @@ GalleryStack.navigationOptions = {
   )
 }*/
 export default createBottomTabNavigator({
+<<<<<<< HEAD
     HomeStack,
     CameraStack,
     SettingsStack,
+=======
+  HomeStack,
+  LinksStack,
+  SettingsStack,
   //CameraStack,
   //GalleryStack
+>>>>>>> f24538cd2f7bd39f775d9f6ca6a8d339f82425be
 });
