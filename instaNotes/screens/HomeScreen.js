@@ -56,7 +56,6 @@ export default class HomeScreen extends React.Component {
     return (
         <Swiper style={styles.wrapper} showsButtons={true}>
           <View style={styles.slide1}>
-            <Text style={styles.slide1}>Beautiful</Text>
             <Image
               resizeMode = 'contain'
               style = {{width: Dimensions.get('window').width, height: 1200}}
@@ -65,13 +64,11 @@ export default class HomeScreen extends React.Component {
           </View>
 
             <View style={styles.slide2}>
-                <Text style={styles.text}>And simple</Text>
 
             </View>
 
 
             <View style={styles.slide3}>
-            <Text style={styles.text}>Home</Text>
           </View>
         </Swiper>
     );
