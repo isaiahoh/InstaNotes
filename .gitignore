@@ -1,2 +1,9 @@
 
 .idea/workspace.xml
+.expo/packager-info.json
+.expo/settings.json
+/node_modules
+package-lock.json
+package.json
+instaNotes/package.json
+instaNotes/package-lock.json
